@@ -16,6 +16,12 @@ story = Story.create([
   content: 'this is the plot of the first story'
   ])
 
+story_2 = Story.create([
+  title: 'second story',
+  user_id: 1,
+  content: 'this is the second story, story #2'
+  ])
+
 
 characters = Character.create([
   {
