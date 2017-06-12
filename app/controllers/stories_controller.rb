@@ -12,6 +12,20 @@ class StoriesController < ApplicationController #correct?
       # Character.create(...)
     # end
 
+    # story_characters = params[:characters].map do |char|
+    #   hero = Character.create(archetype: params[:archetype], name: params[:name], gender: params[:gender])
+    #   shadow = Character.create(archetype: params[:archetype], name: params[:name], gender: params[:gender])
+    #   friend = Character.create(archetype: params[:archetype], name: params[:name], gender: params[:gender])
+    # end
+
+    # hero = Character.create(archetype: params[:archetype], name: params[:name], gender: params[:gender])
+    # shadow = Character.create(archetype: params[:archetype], name: params[:name], gender: params[:gender])
+    # friend = Character.create(archetype: params[:archetype], name: params[:name], gender: params[:gender])
+    # #need to do this for each character?
+    # #need to have the http://localhost:3000/characters route set up, and be able to see the persisted characters?
+    #
+    # characters = [hero, shadow, friend]
+
     #  make a new story with title and user_id from params
     story = Story.new(story_params)
 
@@ -59,7 +73,9 @@ class StoriesController < ApplicationController #correct?
   private
 
   def story_params
-    params.require(:story).permit(:title, :user_id)
+    # params.require(:story).permit(:title, :user_id)
+    params.require(:story).permit(:content, :title, :user_id, :genre, characters: [:id, :archetype, :name, :gender])
+    # need content as attribute above so user can update story (update content)
   end
 
 end

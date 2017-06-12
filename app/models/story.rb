@@ -1,4 +1,5 @@
 class Story < ApplicationRecord
+
   STORY_LENGTH = 5
 
   belongs_to :user
@@ -13,30 +14,37 @@ class Story < ApplicationRecord
      Paragraph.where({order: [num]}).order("RANDOM()").first #.html_safe #.html_safe doesn't seem to do anything here
     end
 
+    # hero = Character.create(archetype: params[:archetype], name: params[:name], gender: params[:gender])
+    # shadow = Character.create(archetype: params[:archetype], name: params[:name], gender: params[:gender])
+    # friend = Character.create(archetype: params[:archetype], name: params[:name], gender: params[:gender])
+    # #need to do this for each character?
+    # #need to have the http://localhost:3000/characters route set up, and be able to see the persisted characters.
+    #
+    # characters = [hero, shadow, friend]
+
+    #characters = ???
+    #user adds character names and hit CreateStory, which triggers this method...
+    #how do we get those characters, saved in state on the browser, to the backend, to be associated with the newly created story?
+
     self.paragraphs << paragraphs #shoveling paragraphs variable above into story.paragraphs
     #.html_safe #.html_safe doesn't seem to do anything here
+
+    # self.characters << characters
 
     self.content = self.story_content #calling story_content below and setting story's content as story_content
 
     # Paragraph.where({ order: [1]}).order("RANDOM()").first
-  end
+  end #end createContent
+
 
   def story_content
     full_story = self.paragraphs.map do |p|
-      # p.text
-      p.text
-    # end.join("\r\n\n\n\n\n")
-    # end.split("\n")
-    # end.join("").split("\r\n")
-    # end.split("\r\n")
-  # end.join("<br>").html_safe
-  # end.join("\r\n--------------------------\r\n")
+      p.text #this works, but returns html tags too
+      #need to call .innerHTML in client, not here, server-side...
+      #update: React doesn't like innerHTML, calls it dangerous.
     end
-    #instead of calling join on line above, calling it here. i think it reads better.
-  full_story.join("<br>\r\n\r\n--------------------------\r\r\n\n")
-
-  #trying to get line breaks between paragraphs
-  end
+  full_story.join("-----") #instead of calling join on line above, calling it here. i think it reads better.
+end #end story_content
 
 end #end of class
 
