@@ -6,10 +6,22 @@ class StoriesController < ApplicationController #correct?
   end
 
   def create
+
     # genre = Genre.find_by(name: params[....])
 
     # story_characters = params[:characters].map do |char|
       # Character.create(...)
+    # end
+
+    # @post = current_user.posts.build(params[:post])
+
+    # story_characters = params[:story][:characters].map do |char|
+    #   Character.create([
+    #     story_id: 1, #need a story id to be able to create a character, cuz a character belongs to a story
+    #     # name: '',
+    #     archetype: '', #0 is hero
+    #     gender: '' #0 is male
+    #     ])
     # end
 
     # story_characters = params[:characters].map do |char|
@@ -18,9 +30,15 @@ class StoriesController < ApplicationController #correct?
     #   friend = Character.create(archetype: params[:archetype], name: params[:name], gender: params[:gender])
     # end
 
-    # hero = Character.create(archetype: params[:archetype], name: params[:name], gender: params[:gender])
-    # shadow = Character.create(archetype: params[:archetype], name: params[:name], gender: params[:gender])
-    # friend = Character.create(archetype: params[:archetype], name: params[:name], gender: params[:gender])
+  #  params["story"]["characters"]
+
+  # hero = Character.create(archetype: params[:archetype], name: params[:name], gender: params[:gender])
+  # shadow = Character.create(archetype: params[:archetype], name: params[:name], gender: params[:gender])
+  # friend = Character.create(archetype: params[:archetype], name: params[:name], gender: params[:gender])
+
+    # hero = Character.new(params["story"]["characters"])
+    # shadow = Character.new(params["story"]["characters"])
+    # friend = Character.new(params["story"]["characters"])
     # #need to do this for each character?
     # #need to have the http://localhost:3000/characters route set up, and be able to see the persisted characters?
     #
@@ -29,9 +47,17 @@ class StoriesController < ApplicationController #correct?
     #  make a new story with title and user_id from params
     story = Story.new(story_params)
 
+    # story.createContent("genre", "story_characters") #calling createContent method in story model
     story.createContent("genre", "story_characters") #calling createContent method in story model
 
     story.save
+    ###trying to add characters here...
+    characters = characters_params.map do |character_hash|
+      character = Character.new(character_hash)
+      character.story_id = story.id
+      character.save
+    end
+
     render json: story
     # # {
     # id: 1,
@@ -73,9 +99,17 @@ class StoriesController < ApplicationController #correct?
   private
 
   def story_params
+
     # params.require(:story).permit(:title, :user_id)
-    params.require(:story).permit(:content, :title, :user_id, :genre, characters: [:id, :archetype, :name, :gender])
+
+#####need all these params????
+
+    params.require(:story).permit(:content, :title, :user_id, :genre)
     # need content as attribute above so user can update story (update content)
+  end
+  def characters_params
+    char_params = params.require(:story).permit( characters: [:archetype, :name, :gender] )
+    char_params[:characters]
   end
 
 end
