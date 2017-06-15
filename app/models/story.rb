@@ -12,7 +12,7 @@ class Story < ApplicationRecord
   def createContent(genre, characters)
     paragraphs = (1..STORY_LENGTH).to_a.map do |num|
      Paragraph.where({order: [num]}).order("RANDOM()").first #.html_safe #.html_safe doesn't seem to do anything here
-    end
+    end #end loop
 
     # hero = Character.create(archetype: params[:archetype], name: params[:name], gender: params[:gender])
     # shadow = Character.create(archetype: params[:archetype], name: params[:name], gender: params[:gender])
@@ -45,6 +45,7 @@ class Story < ApplicationRecord
     end
   full_story.join("-----") #instead of calling join on line above, calling it here. i think it reads better.
 end #end story_content
+
 
 end #end of class
 
