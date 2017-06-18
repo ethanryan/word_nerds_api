@@ -127,12 +127,12 @@ paragraphs = Paragraph.create([
 
   {plot_id: 1,
     order: 3,
-    text: "That night, HERO babysits, while FRIEND babysits across the street. When FRIEND gets a call from friend_him/her boyfriend asking friend_him/her to pick him up, friend_he/she drops LOVER off at the house. FRIEND gets in friend_him/her car. SHADOW, who was hiding in the backseat, strangles friend_him/her before slitting friend_him/her throat. While playing hide-and-seek, the kid spots SHADOW carrying FRIEND's corpse and tries to tell HERO, who says hero_he/she doesn't believe in any 'bogeyman'."
+    text: "That night, HERO babysits, while FRIEND babysits across the street. When FRIEND gets a call from friend_his/her boyfriend asking friend_him/her to pick him up, friend_he/she drops LOVER off at the house. FRIEND gets in friend_his/her car. SHADOW, who was hiding in the backseat, strangles friend_him/her before slitting friend_his/her throat. While playing hide-and-seek, the kid spots SHADOW carrying FRIEND's corpse and tries to tell HERO, who says hero_he/she doesn't believe in any 'bogeyman'."
   },
 
   {plot_id: 1,
     order: 4,
-    text: "Feeling unsettled, HERO puts the kids to bed and goes across the street, where hero_he/she discovers the corpses of FRIEND and friend_him/her boyfriend. HERO is suddenly attacked by SHADOW. HERO falls down the staircase, but quickly recovers. Fleeing, hero_he/she screams for help, to no avail. Running back to the house, hero_he/she realizes hero_he/she lost the keys. SHADOW approaches. HERO panics and screams. Luckily, the kids open the door in time. HERO instructs the kids to hide. The phone line is dead. As hero_he/she sits down in horror next to the couch, SHADOW appears and tries to stab hero_him/her, but hero_he/she stabs shadow_him/her in the side of shadow_his/her neck with a knitting needle and shadow_he/she collapses."
+    text: "Feeling unsettled, HERO puts the kids to bed and goes across the street, where hero_he/she discovers the corpses of FRIEND and friend_his/her boyfriend. HERO is suddenly attacked by SHADOW. HERO falls down the staircase, but quickly recovers. Fleeing, hero_he/she screams for help, to no avail. Running back to the house, hero_he/she realizes hero_he/she lost the keys. SHADOW approaches. HERO panics and screams. Luckily, the kids open the door in time. HERO instructs the kids to hide. The phone line is dead. As hero_he/she sits down in horror next to the couch, SHADOW appears and tries to stab hero_him/her, but hero_he/she stabs shadow_him/her in the side of shadow_his/her neck with a knitting needle and shadow_he/she collapses."
   },
 
   {plot_id: 1,
@@ -177,7 +177,7 @@ paragraphs = Paragraph.create([
 
   {plot_id: 3, #home alone
     order: 2,
-    text: "Meanwhile, HERO wakes up to find the house empty. Believing hero_his/her wish came true, HERO is overjoyed with freedom. However, HERO's joy turns to fear as hero_he/she encounters his neighbor, MENTOR, who is rumored to have murdered mentor_his/her family with a shovel. HERO also encounters SHADOW and GOON, a pair of burglars who have targeted HERO's house. HERO is initially able to keep them away by making the house appear as if hero_his/her family is at home, but the crooks eventually realize that HERO is home alone.",
+    text: "Meanwhile, HERO wakes up to find the house empty. Believing hero_his/her wish came true, HERO is overjoyed with freedom. However, HERO's joy turns to fear as hero_he/she encounters hero_his/her neighbor, MENTOR, who is rumored to have murdered mentor_his/her family with a shovel. HERO also encounters SHADOW and GOON, a pair of burglars who have targeted HERO's house. HERO is initially able to keep them away by making the house appear as if hero_his/her family is at home, but the crooks eventually realize that HERO is home alone.",
   },
 
   {plot_id: 3, #home alone

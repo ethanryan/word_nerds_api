@@ -43,7 +43,7 @@ class Story < ApplicationRecord
       #need to call .innerHTML in client, not here, server-side...
       #update: React doesn't like innerHTML, calls it dangerous.
     end
-  full_story.join("-----") #instead of calling join on line above, calling it here. i think it reads better.
+  full_story.join("-----")
 end #end story_content
 
 

@@ -23,48 +23,53 @@ class StoriesController < ApplicationController #correct?
       # "Terribly complex".gsub "complex", "simple" # => "Terribly simple"
       character.save
 
+      # if condition
+      #
+      # else
+      #
+      # end
+
       # story.content.gsub!("HERO", character.name) #substituting story content instances of "HERO" with character's name if character is hero, and modifies string in place, saving it (without exclamation mark, gsub wasn't being saved)
 
       character.archetype === "hero" ? story.content.gsub!("HERO", character.name) : false
-      character.archetype === "hero" && character.gender === "he" ? story.content.gsub!("hero_he/she", "he") : false
-      character.archetype === "hero" && character.gender === "he" ? story.content.gsub!("hero_his/her", "his") : false
-      character.archetype === "hero" && character.gender === "he" ? story.content.gsub!("hero_him/her", "him") : false
-      character.archetype === "hero" && character.gender === "she" ? story.content.gsub!("hero_he/she", "she") : false
-      character.archetype === "hero" && character.gender === "she" ? story.content.gsub!("hero_his/her", "her") : false
-      character.archetype === "hero" && character.gender === "she" ? story.content.gsub!("hero_him/her", "her") : false
+      character.archetype === "hero" && character.gender === "male" ? story.content.gsub!("hero_he/she", "he") : false
+      character.archetype === "hero" && character.gender === "male" ? story.content.gsub!("hero_his/her", "his") : false
+      character.archetype === "hero" && character.gender === "male" ? story.content.gsub!("hero_him/her", "him") : false
+      character.archetype === "hero" && character.gender === "female" ? story.content.gsub!("hero_he/she", "she") : false
+      character.archetype === "hero" && character.gender === "female" ? story.content.gsub!("hero_his/her", "her") : false
+      character.archetype === "hero" && character.gender === "female" ? story.content.gsub!("hero_him/her", "her") : false
 
       character.archetype === "shadow" ? story.content.gsub!("SHADOW", character.name) : false
-      character.archetype === "shadow" && character.gender === "he" ? story.content.gsub!("shadow_he/she", "he") : false
-      character.archetype === "shadow" && character.gender === "he" ? story.content.gsub!("shadow_his/her", "his") : false
-      character.archetype === "shadow" && character.gender === "he" ? story.content.gsub!("shadow_him/her", "him") : false
-      character.archetype === "shadow" && character.gender === "she" ? story.content.gsub!("shadow_he/she", "she") : false
-      character.archetype === "shadow" && character.gender === "she" ? story.content.gsub!("shadow_his/her", "her") : false
-      character.archetype === "shadow" && character.gender === "she" ? story.content.gsub!("shadow_him/her", "her") : false
+      character.archetype === "shadow" && character.gender === "male" ? story.content.gsub!("shadow_he/she", "he") : false
+      character.archetype === "shadow" && character.gender === "male" ? story.content.gsub!("shadow_his/her", "his") : false
+      character.archetype === "shadow" && character.gender === "male" ? story.content.gsub!("shadow_him/her", "him") : false
+      character.archetype === "shadow" && character.gender === "female" ? story.content.gsub!("shadow_he/she", "she") : false
+      character.archetype === "shadow" && character.gender === "female" ? story.content.gsub!("shadow_his/her", "her") : false
+      character.archetype === "shadow" && character.gender === "female" ? story.content.gsub!("shadow_him/her", "her") : false
 
       character.archetype === "friend" ? story.content.gsub!("FRIEND", character.name) : false
-      character.archetype === "friend" && character.gender === "he" ? story.content.gsub!("friend_he/she", "he") : false
-      character.archetype === "friend" && character.gender === "he" ? story.content.gsub!("friend_his/her", "his") : false
-      character.archetype === "friend" && character.gender === "he" ? story.content.gsub!("friend_him/her", "him") : false
-      character.archetype === "friend" && character.gender === "she" ? story.content.gsub!("friend_he/she", "she") : false
-      character.archetype === "friend" && character.gender === "she" ? story.content.gsub!("friend_his/her", "her") : false
-      character.archetype === "friend" && character.gender === "she" ? story.content.gsub!("friend_him/her", "her") : false
+      character.archetype === "friend" && character.gender === "male" ? story.content.gsub!("friend_he/she", "he") : false
+      character.archetype === "friend" && character.gender === "male" ? story.content.gsub!("friend_his/her", "his") : false
+      character.archetype === "friend" && character.gender === "male" ? story.content.gsub!("friend_him/her", "him") : false
+      character.archetype === "friend" && character.gender === "female" ? story.content.gsub!("friend_he/she", "she") : false
+      character.archetype === "friend" && character.gender === "female" ? story.content.gsub!("friend_his/her", "her") : false
+      character.archetype === "friend" && character.gender === "female" ? story.content.gsub!("friend_him/her", "her") : false
 
       character.archetype === "mentor" ? story.content.gsub!("MENTOR", character.name) : false
-      character.archetype === "mentor" && character.gender === "he" ? story.content.gsub!("mentor_he/she", "he") : false
-      character.archetype === "mentor" && character.gender === "he" ? story.content.gsub!("mentor_his/her", "his") : false
-      character.archetype === "mentor" && character.gender === "he" ? story.content.gsub!("mentor_him/her", "him") : false
-      character.archetype === "mentor" && character.gender === "she" ? story.content.gsub!("mentor_he/she", "she") : false
-      character.archetype === "mentor" && character.gender === "she" ? story.content.gsub!("mentor_his/her", "her") : false
-      character.archetype === "mentor" && character.gender === "she" ? story.content.gsub!("mentor_him/her", "her") : false
+      character.archetype === "mentor" && character.gender === "male" ? story.content.gsub!("mentor_he/she", "he") : false
+      character.archetype === "mentor" && character.gender === "male" ? story.content.gsub!("mentor_his/her", "his") : false
+      character.archetype === "mentor" && character.gender === "male" ? story.content.gsub!("mentor_him/her", "him") : false
+      character.archetype === "mentor" && character.gender === "female" ? story.content.gsub!("mentor_he/she", "she") : false
+      character.archetype === "mentor" && character.gender === "female" ? story.content.gsub!("mentor_his/her", "her") : false
+      character.archetype === "mentor" && character.gender === "female" ? story.content.gsub!("mentor_him/her", "her") : false
 
       character.archetype === "lover" ? story.content.gsub!("LOVER", character.name) : false
-      character.archetype === "lover" && character.gender === "he" ? story.content.gsub!("lover_he/she", "he") : false
-      character.archetype === "lover" && character.gender === "he" ? story.content.gsub!("lover_his/her", "his") : false
-      character.archetype === "lover" && character.gender === "he" ? story.content.gsub!("lover_him/her", "him") : false
-      character.archetype === "lover" && character.gender === "she" ? story.content.gsub!("lover_he/she", "she") : false
-      character.archetype === "lover" && character.gender === "she" ? story.content.gsub!("lover_his/her", "her") : false
-      character.archetype === "lover" && character.gender === "she" ? story.content.gsub!("lover_him/her", "her") : false
-
+      character.archetype === "lover" && character.gender === "male" ? story.content.gsub!("lover_he/she", "he") : false
+      character.archetype === "lover" && character.gender === "male" ? story.content.gsub!("lover_his/her", "his") : false
+      character.archetype === "lover" && character.gender === "male" ? story.content.gsub!("lover_him/her", "him") : false
+      character.archetype === "lover" && character.gender === "female" ? story.content.gsub!("lover_he/she", "she") : false
+      character.archetype === "lover" && character.gender === "female" ? story.content.gsub!("lover_his/her", "her") : false
+      character.archetype === "lover" && character.gender === "female" ? story.content.gsub!("lover_him/her", "her") : false
 
       #hero_he/she for lowercase
       #her_HE/SHE for uppercase
@@ -116,7 +121,7 @@ class StoriesController < ApplicationController #correct?
     story.update(story_params)
     story.save
     stories = Story.all #for patch request
-    render json: stories #for patch request
+    render json: stories #for patch request, but this should be story instead...
   end
 
   def destroy
