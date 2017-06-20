@@ -3,9 +3,11 @@ Rails.application.routes.draw do
 
   resources :stories, only: [:index, :create, :show, :update, :destroy]
 
+  resources :users, only: [:index, :create, :show, :update, :destroy]
 
-  post '/signin', to: 'signin'
-  
+  post "/sign_in", to: "users#sign_in"
+  post "/decode_token", to: "users#decode_token"
+
   #get '/stories', to: 'stories#index'
   # post '/stories', to: 'stories#create'
   # patch '/stories/:id/edit', to: 'stories#update'
