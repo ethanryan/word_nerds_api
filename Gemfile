@@ -10,11 +10,11 @@ gem 'active_model_serializers' #adding serializers
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
 # Use sqlite3 as the database for Active Record
-# gem 'sqlite3', '~> 1.3.13' #need postgres for heroku, can't use sqlite3
+gem 'sqlite3', '~> 1.3.13' #need postgres for heroku, can't use sqlite3
 
 #using postgres instead of sqlite3 as database
 # in terminal: gem install pg
-gem 'pg'
+# gem 'pg'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
