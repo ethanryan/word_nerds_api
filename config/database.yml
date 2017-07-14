@@ -1,29 +1,50 @@
+###got this from heroku documentation, and changed project name:
+
 development:
   adapter: postgresql
-  encoding: utf8
-  database: project_development
+  database: word_nerds_api_development
   pool: 5
-  username:
-  password:
-
-test: &TEST
+  timeout: 5000
+test:
   adapter: postgresql
-  encoding: utf8
-  database: project_test
+  database: word_nerds_api_test
   pool: 5
-  username:
-  password:
+  timeout: 5000
 
 production:
   adapter: postgresql
-  encoding: utf8
-  database: project_production
+  database: word_nerds_api_production
   pool: 5
-  username:
-  password:
+  timeout: 5000
 
-cucumber:
-  <<: *TEST
+###got this from stackoverflow:
+
+# development:
+#   adapter: postgresql
+#   encoding: utf8
+#   database: project_development
+#   pool: 5
+#   username:
+#   password:
+#
+# test: &TEST
+#   adapter: postgresql
+#   encoding: utf8
+#   database: project_test
+#   pool: 5
+#   username:
+#   password:
+#
+# production:
+#   adapter: postgresql
+#   encoding: utf8
+#   database: project_production
+#   pool: 5
+#   username:
+#   password:
+#
+# cucumber:
+#   <<: *TEST
 
 
 #####commenting out everything below and using above instead, for postgres instead of SQLite3
