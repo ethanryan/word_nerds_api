@@ -14,7 +14,7 @@ gem 'sqlite3', '~> 1.3.13' #need postgres for heroku, can't use sqlite3
 
 #using postgres instead of sqlite3 as database
 # in terminal: gem install pg
-# gem 'pg'
+gem 'pg' #adding this for postgres 
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
