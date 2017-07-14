@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 
+# ruby '2.3.4' #setting ruby version for heroku
+
 gem 'active_model_serializers' #adding serializers
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
