@@ -1,5 +1,5 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :stories
-  #test comment
+  #test comment2
 end
