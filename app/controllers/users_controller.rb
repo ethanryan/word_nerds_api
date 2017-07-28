@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       token = JWT.encode(
         {user_id: user.id}, ENV["JWT_SECRET"], ENV["JWT_ALGORITHM"]
       )
-      render json: {user: user, token: token}
+      render json: {user: UserSerializer.new(user).attributes, token: token}
     else
       render json: {error: "No account or password found"}
     end
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       token = JWT.encode({user_id: user.id}, ENV["JWT_SECRET"], ENV["JWT_ALGORITHM"])
-      render json: {user: user, token: token}
+      render json: {user: UserSerializer.new(user).attributes, token: token}
     else
       render json: {error: "ERROR"}, status: 400
     end

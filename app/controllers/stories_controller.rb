@@ -1,5 +1,5 @@
 class StoriesController < ApplicationController
-
+  before_action :authorize_account!
   def index
     stories = Story.all
     render json: stories
