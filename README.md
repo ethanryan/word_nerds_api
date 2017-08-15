@@ -1,24 +1,10 @@
-# README
+React backend for story generator
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Check out the app here: http://word-nerds-client.herokuapp.com/
 
-Things you may want to cover:
+![word nerds demo](https://media.giphy.com/media/cJYcBe9TCLpT2/giphy.gif)
 
-* Ruby version
 
-* System dependencies
+demo gif: https://giphy.com/gifs/cJYcBe9TCLpT2/html5
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+on giphy: https://media.giphy.com/media/cJYcBe9TCLpT2/giphy.gif
