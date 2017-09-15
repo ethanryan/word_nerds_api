@@ -1,11 +1,9 @@
 class UsersController < ApplicationController
 
-
   def index
     users = User.all
     render json: users
   end
-
 
   def sign_in
     user = User.find_by(name: params[:name])
@@ -30,6 +28,8 @@ class UsersController < ApplicationController
   end
 
   def me
+    #calling this method "current_user" creates an infinite loop for some reason,
+    #so I'm calling this method "me", here and in the routes
     authorize_account!
     return if performed?
     render json: {user: UserSerializer.new(@current_account).attributes}
