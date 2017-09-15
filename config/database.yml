@@ -1,5 +1,10 @@
 ###got this from heroku documentation, and changed project name:
 
+##note: when running locally, create db with this in terminal: bundle exec rake db:create
+## then do: rails db:migrate
+## then do: rails db:seed
+## then do: rails s
+
 development:
   adapter: postgresql
   database: word_nerds_api_development

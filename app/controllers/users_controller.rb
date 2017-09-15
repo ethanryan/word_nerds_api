@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+
   def index
     users = User.all
     render json: users
@@ -26,6 +27,12 @@ class UsersController < ApplicationController
     else
       render json: {error: "ERROR"}, status: 400
     end
+  end
+
+  def me
+    authorize_account!
+    return if performed?
+    render json: {user: UserSerializer.new(@current_account).attributes}
   end
 
   def decode_token

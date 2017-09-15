@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :stories, only: [:index, :create, :show, :update, :destroy]
 
+  get '/users/current_user', to: 'users#me'
+
   resources :users, only: [:index, :create, :show, :update, :destroy]
 
   post "/sign_in", to: "users#sign_in"

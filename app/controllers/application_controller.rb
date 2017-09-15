@@ -20,7 +20,8 @@ class ApplicationController < ActionController::API
   def authorize_account!
     current_account
     if !@current_account.present?
-      render json: {error: 'Invalid authorization'} and return
+      render json: [{error: 'Invalid authorization!!!!'}] and return
+      #making above an array so it doesn't break app...
     end
   end
 end
