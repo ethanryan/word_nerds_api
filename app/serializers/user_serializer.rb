@@ -2,5 +2,7 @@ class UserSerializer < ActiveModel::Serializer
   attributes :id,
              :name,
              :email_address,
-             :profile_pic
+             :profile_pic,
+             :created_at,
+             :updated_at
 end

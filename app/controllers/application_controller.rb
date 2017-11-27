@@ -19,10 +19,9 @@ class ApplicationController < ActionController::API
 
   def authorize_account!
     current_account
-    # if !@current_account.present? #this is saying if current_account is NOT present, return error... I removed it to see the JSON.
-    if @current_account.present?
-      render json: [{error: 'Invalid authorization!!!!'}] and return
-      #making above an array so it doesn't break app...
-    end
+    #commenting out below if statement......
+    # if !@current_account.present? #this is saying if current_account is NOT present, return error...
+    #   render json: [{error: 'Invalid authorization!!!!'}] and return #making an array so it doesn't break app...
+    # end
   end
 end
