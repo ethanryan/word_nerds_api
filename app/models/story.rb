@@ -11,7 +11,7 @@ class Story < ApplicationRecord
 
   def create_content(genre, characters)
     paragraphs = (1..STORY_LENGTH).to_a
-    paragraphs.map do |num|
+    paragraphs = paragraphs.map do |num|
      Paragraph.where({order: [num]}).order("RANDOM()").first
     end #end loop
     self.paragraphs << paragraphs
