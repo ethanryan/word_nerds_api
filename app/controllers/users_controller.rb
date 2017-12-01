@@ -27,7 +27,15 @@ class UsersController < ApplicationController
     end
   end
 
+  # def show
+  #   user = User.find_by(name: params[:name])
+  #   render json: user
+  # end
+
+
+
   def me
+  # def current_user_xyz
     #calling this method "current_user" creates an infinite loop for some reason,
     #so I'm calling this method "me", here and in the routes
     authorize_account!

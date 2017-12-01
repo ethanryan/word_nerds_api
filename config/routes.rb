@@ -3,12 +3,15 @@ Rails.application.routes.draw do
 
   resources :stories, only: [:index, :create, :show, :update, :destroy]
 
-  get '/users/current_user', to: 'users#me'
-
+  get "/users/current_user", to: "users#me"
+  # get "/users/current_user", to: "users#current_user_xyz"
+  
   resources :users, only: [:index, :create, :show, :update, :destroy]
 
   post "/sign_in", to: "users#sign_in"
   post "/decode_token", to: "users#decode_token"
+
+
 
   #get '/stories', to: 'stories#index'
   # post '/stories', to: 'stories#create'

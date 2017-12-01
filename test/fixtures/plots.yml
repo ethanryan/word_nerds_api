@@ -1,17 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  genre_id: MyString
-  paragraph_1: MyString
-  paragraph_2: MyString
-  paragraph_3: MyString
-  paragraph_4: MyString
-  paragraph_5: MyString
+  genre_id: 1
+  title: MyString
+  author: MyString
 
 two:
-  genre_id: MyString
-  paragraph_1: MyString
-  paragraph_2: MyString
-  paragraph_3: MyString
-  paragraph_4: MyString
-  paragraph_5: MyString
+  genre_id: 1
+  title: MyString
+  author: MyString
+
+# two:
+#   genre_id: MyString
+#   paragraph_1: MyString
+#   paragraph_2: MyString
+#   paragraph_3: MyString
+#   paragraph_4: MyString
+#   paragraph_5: MyString

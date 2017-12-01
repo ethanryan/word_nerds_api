@@ -1,25 +1,31 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  horror: MyString
-  action: MyString
-  scifi: MyString
-  fantasy: MyString
-  comedy: MyString
-  drama: MyString
-  romance: MyString
-  western: MyString
-  family: MyString
-  random: MyString
+  name: MyString
 
 two:
-  horror: MyString
-  action: MyString
-  scifi: MyString
-  fantasy: MyString
-  comedy: MyString
-  drama: MyString
-  romance: MyString
-  western: MyString
-  family: MyString
-  random: MyString
+  name: MyString
+
+# one:
+#   horror: MyString
+#   action: MyString
+#   scifi: MyString
+#   fantasy: MyString
+#   comedy: MyString
+#   drama: MyString
+#   romance: MyString
+#   western: MyString
+#   family: MyString
+#   random: MyString
+#
+# two:
+#   horror: MyString
+#   action: MyString
+#   scifi: MyString
+#   fantasy: MyString
+#   comedy: MyString
+#   drama: MyString
+#   romance: MyString
+#   western: MyString
+#   family: MyString
+#   random: MyString
