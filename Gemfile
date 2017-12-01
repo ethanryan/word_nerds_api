@@ -33,6 +33,9 @@ gem "figaro"
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors' #uncommenting this for middlewear
 
+# adding rspec for testing -- ER Dec 2017
+gem "rspec"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
