@@ -1,7 +1,8 @@
-## adding this to require environment
+#!/usr/bin/env ruby
 
-# require 'rubygems'
-# ENV["RAILS_ENV"] ||= 'test'
+## adding this to require environment
+require 'rubygems'
+ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 
 
