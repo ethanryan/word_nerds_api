@@ -25,7 +25,7 @@ gem 'puma', '~> 3.7'
 gem 'bcrypt', '~> 3.1.7' #uncommenting this for user passwords.
 
 gem 'jwt'
-gem "figaro"
+gem 'figaro'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -34,7 +34,16 @@ gem "figaro"
 gem 'rack-cors' #uncommenting this for middlewear
 
 # adding rspec for testing -- ER Dec 2017
-gem "rspec"
+gem 'rspec'
+gem 'rspec-rails'
+
+#adding capybara for testing -- ER Dec 2017
+group :test do
+  gem 'phantomjs'
+  gem 'poltergeist'
+  gem 'selenium-webdriver' #not using this but keeping gem here anyway
+  gem 'capybara'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

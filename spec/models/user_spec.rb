@@ -1,7 +1,4 @@
-require 'spec_helper'
-
-# above is doing the same as this:
-# require_relative '../../app/models/user.rb'
+require 'rails_helper'
 
 describe User do
    context "When testing, the User class" do
