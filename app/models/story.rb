@@ -10,11 +10,39 @@ class Story < ApplicationRecord
   has_many :genres, through: :plots
 
   def create_content(genre, characters)
-    paragraphs = (1..STORY_LENGTH).to_a
-    paragraphs = paragraphs.map do |num|
-     Paragraph.where({order: [num]}).order("RANDOM()").first
+    puts "------ in create_content, genre is: " + genre
+    puts "------ in create_content, characters is:::: "
+    puts characters
+
+    genre_name = genre #for now, only one genre... what about random???
+    #will need to fix these lines when I update genres to allow multiple
+    genre_id_num = Genre.where(name: genre_name)[0].id
+    puts "* * * * * genre_id_num is::: "
+    puts genre_id_num
+
+    #for above ----- account for genre = "random" from frontend!!!
+
+    arrayOfNums = (1..STORY_LENGTH).to_a #array from 1 to 5
+
+    paragraphs = arrayOfNums.map do |num| #maping over array from 1 to 5, getting random paragraphs from database in order
+      puts "~~~~~~~~~~ num is::: "
+      puts num
+
+      #plot_ids filted by selected genre_name / genre_id
+      plot_id_num = Plot.joins(:genre).where(genre_id: genre_id_num).order("RANDOM()").first.id
+      puts "---- plot_id_num is::: "
+      puts plot_id_num
+
+      #Paragraph.where({order: [num]}).order("RANDOM()").first
+      para = Paragraph.where({order: [num], plot_id: plot_id_num}).order("RANDOM()").first
+      puts "para.plot.genre.name is: " + para.plot.genre.name
+      para #returning each para
     end #end loop
+
+    puts "------ shoveling array of paragraphs into Story.paragraphs"
     self.paragraphs << paragraphs
+
+    puts "------ calling Story.story_content to create string of content"
     self.content = self.story_content #calling story_content below
   end #end createContent
 
