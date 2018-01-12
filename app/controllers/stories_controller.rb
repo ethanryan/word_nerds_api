@@ -9,7 +9,20 @@ class StoriesController < ApplicationController
   def create
     #  make a new story with title and user_id from params
     story = Story.new(story_params)
-    story.create_content("genre", "story_characters") #calling createContent method in story model
+
+    puts "params.inspect::::::"
+    puts params.inspect
+
+    puts "story_params is: "
+    puts story_params
+
+    puts "genres_params is: "
+    puts genres_params
+
+    #alllll i need below is to pass a string, "horror", as the first argument...
+
+    story.create_content(genres_params, "story_characters") #passing genres within story_params
+    #story.create_content("genres", "story_characters") #calling createContent method in story model
 
     story.save
 
@@ -51,8 +64,14 @@ class StoriesController < ApplicationController
   private
 
   def story_params
-    params.require(:story).permit(:content, :title, :user_id, :genre)
+    #params.require(:story).permit(:content, :title, :user_id, genres: [:name] ) #changed :genre to :genres
+    params.require(:story).permit(:content, :title, :user_id, :genres ) #changed :genre to :genres
     # need content as attribute above so user can update story (update content)
+  end
+
+  def genres_params
+    gen_params = params.require(:story).permit( genres: [:name] ) #changed :genre to :genres
+    gen_params[:genres]
   end
 
   def characters_params
