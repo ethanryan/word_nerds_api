@@ -1,5 +1,7 @@
 class StoriesController < ApplicationController
+
   before_action :authorize_account!
+  
   def index
     stories = Story.all
     render json: stories
@@ -19,10 +21,28 @@ class StoriesController < ApplicationController
     puts "genres_params is: "
     puts genres_params
 
-    #alllll i need below is to pass a string, "horror", as the first argument...
+    puts "storyType_params is: "
+    puts storyType_params
 
-    story.create_content(genres_params, "story_characters") #passing genres within story_params
-    #story.create_content("genres", "story_characters") #calling createContent method in story model
+
+    puts "storyType_params.first.values is:::"
+    puts storyType_params.first.values
+
+
+    # type = storyType_params.map do
+    type_name = storyType_params.first.values #making storyType_params an array...
+    puts type_name #this is an array!
+
+    #alllll i need below is to pass a string, "horror", as the first argument...
+    if type_name[0] === "miniStory"
+      puts "~~~~ >>>> this is a mini Story !!!!!!!!!!!! <<<<< ~~~~~~~~~~~~~~"
+      story.create_content(genres_params, "story_characters") #passing genres within story_params
+      # story.create_content(genres_params, "story_characters") #passing genres within story_params
+    elsif type_name[0] === "story"
+      puts "~~~~~ this is a regular story ~~~~~~~~~~~~~~"
+      story.create_content(genres_params, "story_characters") #passing genres within story_params
+      #story.create_content("genres", "story_characters") #calling createContent method in story model
+    end
 
     story.save
 
@@ -67,6 +87,12 @@ class StoriesController < ApplicationController
     #params.require(:story).permit(:content, :title, :user_id, genres: [:name] ) #changed :genre to :genres
     params.require(:story).permit(:content, :title, :user_id, :genres ) #changed :genre to :genres
     # need content as attribute above so user can update story (update content)
+  end
+
+  def storyType_params
+    type_params = params.require(:story).permit( storyType: [:name] )
+    # type_params = params.require(:story).permit( storyType: [:name] )
+    type_params[:storyType]
   end
 
   def genres_params
