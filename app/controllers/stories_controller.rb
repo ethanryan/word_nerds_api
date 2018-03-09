@@ -1,7 +1,7 @@
 class StoriesController < ApplicationController
 
   before_action :authorize_account!
-  
+
   def index
     stories = Story.all
     render json: stories
@@ -36,7 +36,7 @@ class StoriesController < ApplicationController
     #alllll i need below is to pass a string, "horror", as the first argument...
     if type_name[0] === "miniStory"
       puts "~~~~ >>>> this is a mini Story !!!!!!!!!!!! <<<<< ~~~~~~~~~~~~~~"
-      story.create_content(genres_params, "story_characters") #passing genres within story_params
+      story.create_content_mini_story(genres_params, "story_characters") #passing genres within story_params
       # story.create_content(genres_params, "story_characters") #passing genres within story_params
     elsif type_name[0] === "story"
       puts "~~~~~ this is a regular story ~~~~~~~~~~~~~~"

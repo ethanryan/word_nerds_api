@@ -58,6 +58,26 @@ class Story < ApplicationRecord
   end #end createContent
 
 
+  def create_content_mini_story(genres, characters)
+    genre_name = genres.first.values #making parameters an array...
+    genre_id_num = Genre.where(name: genre_name)[0].id
+    arrayOfNums = (1..STORY_LENGTH).to_a #array from 1 to 5
+    paragraphs = arrayOfNums.map do |num| #maping over array from 1 to 5, getting random paragraphs from database in order
+      if genre_id_num === 10 #if genre_id is "random"
+        genre_id_num = [1, 2, 3, 4, 6, 7] ##all plots by genre in seed file
+        plot_id_nums = Plot.joins(:genre).where(genre_id: genre_id_num.sample).order("RANDOM()").ids
+      else
+        plot_id_nums = Plot.joins(:genre).where(genre_id: genre_id_num).order("RANDOM()").ids
+      end
+      para = Paragraph.where({order: [num], plot_id: plot_id_nums.sample}).order("RANDOM()").first
+      para
+    end #end loop
+    puts paragraphs[0].attributes
+    self.paragraphs << paragraphs
+    self.content = self.mini_story_content #calling story_content below
+    #above line is the only thing different about this function!!!
+  end #end createContent
+
   def story_content
     full_story = self.paragraphs.map do |p|
       p.text
@@ -65,6 +85,13 @@ class Story < ApplicationRecord
   full_story.join("-----")
   # full_story.join("\n\n") #see if this works instead...
   end #end story_content
+
+  def mini_story_content
+    full_story = self.paragraphs.map do |p|
+      p.text.split(". ").sample << "." #gets random sentence from each paragraph...
+    end
+  full_story.join("-----")
+  end #end mini_story_content
 
 
 end #end of class
