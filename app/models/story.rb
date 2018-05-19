@@ -35,7 +35,7 @@ class Story < ApplicationRecord
 
       #for random genres....
       if genre_id_num === 10 #if genre_id is "random"
-        genre_id_num = [1, 2, 3, 4, 6, 7] ##all plots by genre in seed file
+        genre_id_num = [1, 2, 3, 4, 5, 6, 7] ##all plots by genre in seed file
         plot_id_nums = Plot.joins(:genre).where(genre_id: genre_id_num.sample).order("RANDOM()").ids
       else
         plot_id_nums = Plot.joins(:genre).where(genre_id: genre_id_num).order("RANDOM()").ids
@@ -64,7 +64,7 @@ class Story < ApplicationRecord
     arrayOfNums = (1..STORY_LENGTH).to_a #array from 1 to 5
     paragraphs = arrayOfNums.map do |num| #maping over array from 1 to 5, getting random paragraphs from database in order
       if genre_id_num === 10 #if genre_id is "random"
-        genre_id_num = [1, 2, 3, 4, 6, 7] ##all plots by genre in seed file
+        genre_id_num = [1, 2, 3, 4, 5, 6, 7] ##all plots by genre in seed file
         plot_id_nums = Plot.joins(:genre).where(genre_id: genre_id_num.sample).order("RANDOM()").ids
       else
         plot_id_nums = Plot.joins(:genre).where(genre_id: genre_id_num).order("RANDOM()").ids
