@@ -1,0 +1,42 @@
+#select array within Plot.create(), then click: Packages > Pretty JSON > Prettify
+plot = Plot.create([
+  {
+    "genre_id": 5, #fantasy
+    "title": "The Last Unicorn - Wikipedia.rb",
+    "author": "null"
+  }
+])
+#note: when adding new plots, need to redo do each plot's ID
+#seeding database will give each plot an id, from first folder to last folder
+#so Halloween will be plot ID #1, because it's the first plot in the first folder.
+#ALSO: need to figure out how to reseed plots without deleting all users, and all their stories!!!
+#need to JUST drop Plots table, and then migrate / seed Plots table.
+
+#select array within Paragraph.create(), then click: Packages > Pretty JSON > Prettify
+paragraphs = Paragraph.create([
+  {
+    "plot_id": "#{plot.first.id}",
+    "order": 1,
+    "text": "The story begins with a group of human hunters passing through a forest in search of game. After days of coming up empty-handed, they begin to believe they are passing through a Unicorn's forest, where animals are kept safe by a magical aura. They resign themselves to hunting somewhere else; but, before they leave, one of the hunters calls out a warning to the Unicorn that she may be the last of her kind. This revelation disturbs the Unicorn, and though she initially dismisses it, eventually doubt and worry drive her to leave her forest. She travels through the land and discovers that humans no longer even recognize her; instead they see a pretty white mare. She encounters a talking butterfly who speaks in riddles and songs and initially dodges her questions about the other unicorns. Eventually, the butterfly issues a warning that her kind have been herded to a far away land by a creature known as the Red Bull. She continues to search for other unicorns. During her journey, she is taken captive by a traveling carnival led by witch Mommy Fortuna, who uses magical spells to create the illusion that regular animals are in fact creatures of myth and legend. The Unicorn finds herself the only true legendary creature among the group, save for the harpy, Celaeno. Schmendrick, a magician traveling with the carnival, sees the Unicorn for what she is, and he frees her in the middle of the night. The Unicorn frees the other creatures including Celaeno, who kills Mommy Fortuna and Rukh, her hunchbacked assistant."
+  },
+  {
+    "plot_id": "#{plot.first.id}",
+    "order": 2,
+    "text": "The Unicorn and Schmendrick continue traveling in an attempt to reach the castle of King Haggard, where the Red Bull resides. When Schmendrick is captured by bandits, the Unicorn comes to his rescue and attracts the attention of Molly Grue, the bandit leader's wife. Together, the three continue their journey and arrive at Hagsgate, a town under Haggard's rule and the first one he had conquered when he claimed his kingdom. A resident of Hagsgate named Drinn informs them of a curse that stated that their town would continue to share in Haggard's fortune until such a time that someone from Hagsgate would bring Haggard's castle down. Drinn goes on to claim that he discovered a baby boy in the town's marketplace one night in winter. He knew that the child was the one the prophecy spoke of, but he left the baby where he found it, not wanting the prophecy to come true. King Haggard found the baby later that evening and adopted it."
+  },
+  {
+    "plot_id": "#{plot.first.id}",
+    "order": 3,
+    "text": "Molly, Schmendrick and the Unicorn leave Hagsgate and continue toward Haggard's castle, but on their way they are attacked by the Red Bull. The Unicorn runs, but is unable to escape the bull. In an effort to aid her, Schmendrick unwittingly turns the Unicorn into a human woman. Confused by the change, the Red Bull gives up the pursuit and disappears. The change has disastrous consequences on the Unicorn, who suffers tremendous shock at the sudden feeling of mortality in her human body. Schmendrick tells the unicorn that he is immortal and that he cannot make real magic unless he is mortal, and encourages her to continue her quest. The three continue to Haggard's castle, where Schmendrick introduces the Unicorn as \"Lady Amalthea\" to throw off Haggard's suspicions. They manage to convince Haggard to allow them to serve him in his court, with the hopes of gathering clues as to the location of the other unicorns. During their stay, Amalthea is romanced by Haggard's adopted son, Prince Lír. Haggard eventually reveals to Amalthea that the unicorns are trapped in the sea for his own benefit, because the unicorns are the only things that make him happy. He then openly accuses Amalthea of coming to his kingdom to save the unicorns and says that he knows who she really is, but Amalthea has seemingly forgotten about her true nature and her desire to save the other unicorns."
+  },
+  {
+    "plot_id": "#{plot.first.id}",
+    "order": 4,
+    "text": "Following clues given to them by a cat, Molly, Schmendrick, and Amalthea find the entrance to the Red Bull's lair. Haggard and his men-at-arms attempt to stop them, but they manage to enter the bull's lair and are joined by Lír. When the Red Bull attacks them, Schmendrick changes Amalthea back to her original form. At this moment, Schmendrick joyfully becomes mortal. In an effort to save the Unicorn, Lír jumps into the bull's path and is trampled. Fueled by anger and sorrow, the Unicorn drives the bull into the sea. The other unicorns are freed, and they run back to their homes, with Haggard's castle falling in their wake. As the castle falls, its wreckage dissolves into mist before it even hits the ground, and nothing remains to indicate that a castle had ever been there."
+  },
+  {
+    "plot_id": "#{plot.first.id}",
+    "order": 5,
+    "text": "The Unicorn revives Lír with the healing touch of her horn. Now king after Haggard's death, he attempts to follow the Unicorn despite Schmendrick advising against it. As they pass through the now-ruined town of Hagsgate, they learn that Drinn is actually Lír's father, and that he had abandoned him in the marketplace on purpose to fulfill the prophecy. Realizing that he has new responsibilities as king after seeing the state of Hagsgate, Lír returns to rebuild it after accompanying Schmendrick and Molly to the outskirts of his kingdom. The Unicorn returns to her forest. She tells Schmendrick that she is different from all the other unicorns now, because she knows what it's like to feel love and regret. Schmendrick and Molly later come across a princess in trouble and he tells her to go to Lír because he is the hero to save her. Schmendrick and Molly leave this story into another as they sing a love song together."
+  }
+])
