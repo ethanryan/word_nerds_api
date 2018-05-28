@@ -61,7 +61,7 @@ class Story < ApplicationRecord
     puts "------ calling Story.get_story_plot_titles to create string of story_plot_titles"
     self.story_plot_titles = self.get_story_plot_titles
 
-    #### note::::: run the below in the console after adding new plots to database, or after changing plot titles::::
+    #### note::::: run the below in the console BEFORE adding new plots to database (and deleting old plots from the database), or after changing plot titles::::
     # THIS FUCKING WORKS::::::::
     # Story.all.each do |story|
     #   story.story_genre_names = story.get_story_genre_names
