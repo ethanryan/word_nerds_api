@@ -5,6 +5,8 @@ class StorySerializer < ActiveModel::Serializer
              :updated_at,
              :user_id,
              :content,
+             :story_genre_names,
+             :story_plot_titles,
              :user,
              :genres,
              :characters,
