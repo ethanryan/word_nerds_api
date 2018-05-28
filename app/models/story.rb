@@ -53,6 +53,14 @@ class Story < ApplicationRecord
     puts "------ shoveling array of paragraphs into Story.paragraphs"
     self.paragraphs << paragraphs
 
+    ############# <<<<<<<-------------ADDD array of story_genre_names here!!!!! (a string of the names of genres...)
+    puts "------ calling Story.get_story_genre_names to create string of story_genre_names"
+    self.story_genre_names = self.get_story_genre_names
+
+    ############# <<<<<<<-------------ADDD array of story_plot_titles here!!!!! (a string of the plot titles...)
+    puts "------ calling Story.get_story_plot_titles to create string of story_plot_titles"
+    self.story_plot_titles = self.get_story_plot_titles
+
     puts "------ calling Story.story_content to create string of content"
     self.content = self.story_content #calling story_content below
   end #end createContent
@@ -77,6 +85,20 @@ class Story < ApplicationRecord
     self.content = self.mini_story_content #calling story_content below
     #above line is the only thing different about this function!!!
   end #end createContent
+
+  def get_story_genre_names
+    story_genre_names = self.paragraphs.map do |p| #create array of genre names from paragraphs...
+      p.plot.genre.name
+    end
+    story_genre_names.join(", ") #return comma separate string of genre names
+  end
+
+  def get_story_plot_titles
+    story_plot_titles = self.paragraphs.map do |p| #create array of plot titles from paragraphs...
+      p.plot.title
+    end
+    story_plot_titles.join(", ") #return comma separate string of plot titles
+  end
 
   def story_content
     full_story = self.paragraphs.map do |p|
