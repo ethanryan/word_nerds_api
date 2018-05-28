@@ -61,6 +61,14 @@ class Story < ApplicationRecord
     puts "------ calling Story.get_story_plot_titles to create string of story_plot_titles"
     self.story_plot_titles = self.get_story_plot_titles
 
+    #### note::::: run the below in the console after adding new plots to database, or after changing plot titles::::
+    # THIS FUCKING WORKS::::::::
+    # Story.all.each do |story|
+    #   story.story_genre_names = story.get_story_genre_names
+    #   story.story_plot_titles = story.get_story_plot_titles
+    #   story.save!
+    # end
+
     puts "------ calling Story.story_content to create string of content"
     self.content = self.story_content #calling story_content below
   end #end createContent
@@ -91,6 +99,7 @@ class Story < ApplicationRecord
       p.plot.genre.name
     end
     story_genre_names.join(", ") #return comma separate string of genre names
+    # self.save #this returns true, instead of returning above! we don't want that...
   end
 
   def get_story_plot_titles
