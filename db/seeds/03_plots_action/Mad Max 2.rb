@@ -2,7 +2,7 @@
 plot = Plot.create([
   {
     "genre_id": 3,
-    "title": "Mad Max 2.rb",
+    "title": "Mad Max 2",
     "author": "null"
   }
 ])
