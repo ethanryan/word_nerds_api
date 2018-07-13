@@ -62,6 +62,11 @@ class Story < ApplicationRecord
     self.story_plot_titles = self.get_story_plot_titles
 
     #### note::::: run the below in the console BEFORE adding new plots to database (and deleting old plots from the database), or after changing plot titles::::
+    # THIS FUCKING WORKS TOO::::::::
+    # do this like below, in a function, and apply it to all stories in database, so they have their genre names 
+    #ordered = story.paragraphs.sort_by { |hsh| hsh[:order] } #first putting story paragraphs in order, in an array...
+    #ordered.map { |para| para.plot.genre.name }.join(", ") #this returns a string of genre names in order!
+
     # THIS FUCKING WORKS::::::::
     # Story.all.each do |story|
     #   story.story_genre_names = story.get_story_genre_names
