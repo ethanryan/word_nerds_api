@@ -21,6 +21,17 @@
 #   load seed
 # end
 
+# NOTE: reminder: after adding new seed files,
+# before running rake db:seed, must first run three commands:
+#
+# rake db:migrate:redo VERSION=20170603170819
+# above will run CreatePlots...
+# rake db:migrate:redo VERSION=20170606145308
+# above will run CreateParagraphs...
+# rake db:migrate:redo VERSION=20170606145223
+# above will run CreateStoryParagraphs...
+# rake db:seed
+
 #### below loads all .rb files within folders within db/seeds folder
 Dir[File.join(Rails.root, 'db', 'seeds/*', '*.rb')].sort.each do |seed|
   load seed
