@@ -2,7 +2,7 @@
 plot = Plot.create([
   {
     genre_id: 4, #drama
-    "title": "The Match Factory Girl - Wikipedia.rb",
+    "title": "The Match Factory Girl",
     "author": "null"
   }
 ])
