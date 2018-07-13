@@ -35,7 +35,7 @@ class Story < ApplicationRecord
 
       #for random genres....
       if genre_id_num === 10 #if genre_id is "random"
-        genre_id_num = [1, 2, 3, 4, 6, 7] ##all plots by genre in seed file
+        genre_id_num = [1, 2, 3, 4, 5, 6, 7] ##all plots by genre in seed file
         plot_id_nums = Plot.joins(:genre).where(genre_id: genre_id_num.sample).order("RANDOM()").ids
       else
         plot_id_nums = Plot.joins(:genre).where(genre_id: genre_id_num).order("RANDOM()").ids
@@ -53,6 +53,27 @@ class Story < ApplicationRecord
     puts "------ shoveling array of paragraphs into Story.paragraphs"
     self.paragraphs << paragraphs
 
+    ############# <<<<<<<-------------ADDD array of story_genre_names here!!!!! (a string of the names of genres...)
+    puts "------ calling Story.get_story_genre_names to create string of story_genre_names"
+    self.story_genre_names = self.get_story_genre_names
+
+    ############# <<<<<<<-------------ADDD array of story_plot_titles here!!!!! (a string of the plot titles...)
+    puts "------ calling Story.get_story_plot_titles to create string of story_plot_titles"
+    self.story_plot_titles = self.get_story_plot_titles
+
+    #### note::::: run the below in the console BEFORE adding new plots to database (and deleting old plots from the database), or after changing plot titles::::
+    # THIS FUCKING WORKS TOO::::::::
+    # do this like below, in a function, and apply it to all stories in database, so they have their genre names 
+    #ordered = story.paragraphs.sort_by { |hsh| hsh[:order] } #first putting story paragraphs in order, in an array...
+    #ordered.map { |para| para.plot.genre.name }.join(", ") #this returns a string of genre names in order!
+
+    # THIS FUCKING WORKS::::::::
+    # Story.all.each do |story|
+    #   story.story_genre_names = story.get_story_genre_names
+    #   story.story_plot_titles = story.get_story_plot_titles
+    #   story.save!
+    # end
+
     puts "------ calling Story.story_content to create string of content"
     self.content = self.story_content #calling story_content below
   end #end createContent
@@ -64,7 +85,7 @@ class Story < ApplicationRecord
     arrayOfNums = (1..STORY_LENGTH).to_a #array from 1 to 5
     paragraphs = arrayOfNums.map do |num| #maping over array from 1 to 5, getting random paragraphs from database in order
       if genre_id_num === 10 #if genre_id is "random"
-        genre_id_num = [1, 2, 3, 4, 6, 7] ##all plots by genre in seed file
+        genre_id_num = [1, 2, 3, 4, 5, 6, 7] ##all plots by genre in seed file
         plot_id_nums = Plot.joins(:genre).where(genre_id: genre_id_num.sample).order("RANDOM()").ids
       else
         plot_id_nums = Plot.joins(:genre).where(genre_id: genre_id_num).order("RANDOM()").ids
@@ -77,6 +98,21 @@ class Story < ApplicationRecord
     self.content = self.mini_story_content #calling story_content below
     #above line is the only thing different about this function!!!
   end #end createContent
+
+  def get_story_genre_names
+    story_genre_names = self.paragraphs.map do |p| #create array of genre names from paragraphs...
+      p.plot.genre.name
+    end
+    story_genre_names.join(", ") #return comma separate string of genre names
+    # self.save #this returns true, instead of returning above! we don't want that...
+  end
+
+  def get_story_plot_titles
+    story_plot_titles = self.paragraphs.map do |p| #create array of plot titles from paragraphs...
+      p.plot.title
+    end
+    story_plot_titles.join(", ") #return comma separate string of plot titles
+  end
 
   def story_content
     full_story = self.paragraphs.map do |p|
