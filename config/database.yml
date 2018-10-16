@@ -1,9 +1,12 @@
 ###got this from heroku documentation, and changed project name:
 
-##note: when running locally, create db with this in terminal: bundle exec rake db:create
-## then do: rails db:migrate
-## then do: rails db:seed
-## then do: rails s
+##NOTE:
+## when running locally,
+## 1) create db with this in terminal: bundle exec rake db:create
+## 2) then do: rails db:migrate
+## 3) then do: rails db:seed
+## 4) then do: rails s
+## 5) THEN run frontend app
 
 development:
   adapter: postgresql
