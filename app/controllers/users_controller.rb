@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
   def index
-    users = User.all
+    # users = User.all
+    users = User.all.size #returning number of all users, instead of all users... note size is faster than length or count...
     render json: users
   end
 
