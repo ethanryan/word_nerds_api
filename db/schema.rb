@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20181021014331) do
     t.datetime "updated_at", null: false
     t.string "story_genre_names"
     t.string "story_plot_titles"
+    t.string "user_name"
   end
 
   create_table "story_paragraphs", force: :cascade do |t|
