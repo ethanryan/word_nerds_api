@@ -85,7 +85,8 @@ class StoriesController < ApplicationController
 
   def story_params
     #params.require(:story).permit(:content, :title, :user_id, genres: [:name] ) #changed :genre to :genres
-    params.require(:story).permit(:content, :title, :user_id, :genres ) #changed :genre to :genres
+    # params.require(:story).permit(:content, :title, :user_id, :genres ) #changed :genre to :genres
+    params.require(:story).permit(:content, :title, :user_id, :user_name, :genres ) #changed :genre to :genres
     # need content as attribute above so user can update story (update content)
   end
 
