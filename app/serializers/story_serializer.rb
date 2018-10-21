@@ -7,7 +7,7 @@ class StorySerializer < ActiveModel::Serializer
              :content,
              :story_genre_names,
              :story_plot_titles,
-             :user,
+             :user, #will take this out, and add in user_name
              :genres,
              :characters,
              :paragraphs,
