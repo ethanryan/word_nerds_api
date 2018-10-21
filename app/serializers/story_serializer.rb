@@ -4,10 +4,11 @@ class StorySerializer < ActiveModel::Serializer
              :created_at,
              :updated_at,
              :user_id,
+             :user_name, #adding this
              :content,
              :story_genre_names,
              :story_plot_titles,
-             :user, #will take this out, and add in user_name
+             # :user, #will take this out, and add in user_name
              :genres,
              :characters,
              :paragraphs,
