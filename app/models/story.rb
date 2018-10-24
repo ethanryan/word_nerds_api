@@ -116,9 +116,11 @@ class Story < ApplicationRecord
 
   def story_content
     full_story = self.paragraphs.map do |p|
-      p.text
+      # p.text
+      "<p>#{p.text}</p>"
     end
-  full_story.join("-----") #NOTE: will change this, so each paragraph is within p tags instead...
+  # full_story.join("-----") #NOTE: will change this, so each paragraph is within p tags instead...
+  full_story.join("") #NOTE: joining array of paragraphs into a string...
   # full_story.join("\n\n") #see if this works instead...
   end #end story_content
 
