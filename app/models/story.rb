@@ -63,7 +63,7 @@ class Story < ApplicationRecord
 
     #### note::::: run the below in the console BEFORE adding new plots to database (and deleting old plots from the database), or after changing plot titles::::
     # THIS FUCKING WORKS TOO::::::::
-    # do this like below, in a function, and apply it to all stories in database, so they have their genre names 
+    # do this like below, in a function, and apply it to all stories in database, so they have their genre names
     #ordered = story.paragraphs.sort_by { |hsh| hsh[:order] } #first putting story paragraphs in order, in an array...
     #ordered.map { |para| para.plot.genre.name }.join(", ") #this returns a string of genre names in order!
 
@@ -118,7 +118,7 @@ class Story < ApplicationRecord
     full_story = self.paragraphs.map do |p|
       p.text
     end
-  full_story.join("-----")
+  full_story.join("-----") #NOTE: will change this, so each paragraph is within p tags instead...
   # full_story.join("\n\n") #see if this works instead...
   end #end story_content
 
